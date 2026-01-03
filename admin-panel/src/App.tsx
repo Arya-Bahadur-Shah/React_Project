@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useMemo, useState } from "react";
+import Sidebar from "./components/Sidebar";
+import Topbar from "./components/Topbar";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [page, setPage] = useState("Dashboard");
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+  const content = useMemo(() => {
+    return (
+      <div style={{ padding: 18 }}>
+        <p style={{ marginTop: 0 }}>
+          This is <b>{page}</b> (placeholder for now).
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    );
+  }, [page]);
+
+  return (
+    <div style={styles.shell}>
+      <Sidebar active={page} onNavigate={setPage} />
+
+      <main style={styles.main}>
+        <Topbar title={page} />
+        {content}
+      </main>
+    </div>
+  );
 }
 
-export default App
+const styles: Record<string, React.CSSProperties> = {
+  shell: { display: "flex", minHeight: "100vh", background: "#f7f7f8" },
+  main: { flex: 1, minWidth: 0 },
+};
