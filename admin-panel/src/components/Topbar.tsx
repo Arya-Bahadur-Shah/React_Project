@@ -13,7 +13,7 @@ export default function Topbar({ title }: Props) {
       </div>
     </header>
   );
-}
+}   
 
 const styles: Record<string, React.CSSProperties> = {
   topbar: {
@@ -42,7 +42,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: "grid",
     placeItems: "center",
     background: "#111",
-    color: "#fff",
+    color: "#eda2a2ff",
     fontWeight: 700,
   },
 };

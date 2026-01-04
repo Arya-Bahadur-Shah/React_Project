@@ -1,11 +1,14 @@
 import { useMemo, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
-  const [page, setPage] = useState("Dashboard");
+  const [page, setPage] = useState<string>("Dashboard");
 
   const content = useMemo(() => {
+    if (page === "Dashboard") return <Dashboard />;
+
     return (
       <div style={{ padding: 18 }}>
         <p style={{ marginTop: 0 }}>
@@ -28,6 +31,13 @@ export default function App() {
 }
 
 const styles: Record<string, React.CSSProperties> = {
-  shell: { display: "flex", minHeight: "100vh", background: "#f7f7f8" },
-  main: { flex: 1, minWidth: 0 },
+  shell: {
+    display: "flex",
+    minHeight: "100vh",
+    background: "#f7f7f8",
+  },
+  main: {
+    flex: 1,
+    minWidth: 0,
+  },
 };
