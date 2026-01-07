@@ -1,21 +1,20 @@
 import { useMemo, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
+
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 
-
 export default function App() {
-  const [page, setPage] = useState<string>("Dashboard");
-  if (page === "Users") return <Users />;
+  const [page, setPage] = useState("Dashboard");
 
   const content = useMemo(() => {
     if (page === "Dashboard") return <Dashboard />;
-
+    if (page === "Users") return <Users />;
     return (
       <div style={{ padding: 18 }}>
         <p style={{ marginTop: 0 }}>
-          This is <b>{page}</b> (placeholder for now).
+          This is <b>{page}</b>.
         </p>
       </div>
     );
@@ -27,7 +26,7 @@ export default function App() {
 
       <main style={styles.main}>
         <Topbar title={page} />
-        {content}
+        <section style={styles.content}>{content}</section>
       </main>
     </div>
   );
@@ -36,11 +35,18 @@ export default function App() {
 const styles: Record<string, React.CSSProperties> = {
   shell: {
     display: "flex",
-    minHeight: "100vh",
-    background: "#f7f7f8",
+    width: "100vw",
+    height: "100vh",
   },
   main: {
     flex: 1,
     minWidth: 0,
+    display: "flex",
+    flexDirection: "column",
+  },
+  content: {
+    flex: 1,
+    minHeight: 0, // critical for proper scrolling in flex layouts
+    overflowY: "auto",
   },
 };

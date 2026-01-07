@@ -83,13 +83,13 @@ const styles: Record<string, React.CSSProperties> = {
     maxWidth: 420,
     padding: "10px 12px",
     borderRadius: 10,
-    border: "1px solid #eee",
+    border: "1px solid #f64848ff",
     outline: "none",
   },
   count: { alignSelf: "center", opacity: 0.7, fontWeight: 700 },
   tableWrap: {
-    background: "#fff",
-    border: "1px solid #eee",
+    background: "#f97878ff",
+    border: "1px solid #c56a6aff",
     borderRadius: 14,
     overflow: "hidden",
   },
@@ -99,7 +99,7 @@ const styles: Record<string, React.CSSProperties> = {
   btn: {
     padding: "8px 10px",
     borderRadius: 10,
-    border: "1px solid #eee",
+    border: "1px solid #85f072ff",
     background: "#111",
     color: "#fff",
     cursor: "pointer",
@@ -115,6 +115,6 @@ function pill(status: "Active" | "Blocked"): React.CSSProperties {
     fontSize: 12,
     fontWeight: 800,
     border: "1px solid #eee",
-    background: status === "Active" ? "#eefbf1" : "#fff1f1",
+    background: status === "Active" ? "#77f394ff" : "#ff0000ff",
   };
 }

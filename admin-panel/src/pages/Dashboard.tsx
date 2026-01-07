@@ -23,7 +23,7 @@ const styles: Record<string, React.CSSProperties> = {
     gap: 12,
   },
   card: {
-    background: "#fff",
+    background: "#f37d7dff",
     border: "1px solid #eee",
     borderRadius: 14,
     padding: 14,

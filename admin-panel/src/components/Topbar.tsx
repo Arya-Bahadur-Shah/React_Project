@@ -8,7 +8,8 @@ export default function Topbar({ title }: Props) {
       <h1 style={styles.title}>{title}</h1>
 
       <div style={styles.right}>
-        <input placeholder="Search..." style={styles.search} />
+       <span> <input placeholder="Search..." style={styles.search} />
+       </span>
         <div style={styles.avatar}>A</div>
       </div>
     </header>
@@ -20,23 +21,23 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: "14px 18px",
+    padding: "20px 18px",
     borderBottom: "1px solid #eee",
-    background: "#fff",
+    background: "#62797aff",
     position: "sticky",
     top: 0,
     zIndex: 10,
   },
-  title: { fontSize: 18, margin: 0 },
+  title: { fontSize: 18, margin: 9 },
   right: { display: "flex", gap: 10, alignItems: "center" },
   search: {
-    padding: "10px 12px",
+    padding: "10px 20px",
     borderRadius: 10,
     border: "1px solid #eee",
     outline: "none",
   },
   avatar: {
-    width: 36,
+    width: 100,
     height: 36,
     borderRadius: 999,
     display: "grid",

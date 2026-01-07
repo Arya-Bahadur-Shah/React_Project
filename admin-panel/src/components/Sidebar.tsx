@@ -7,7 +7,7 @@ const items = ["Dashboard", "Users", "Products", "Settings"];
 
 export default function Sidebar({ active, onNavigate }: Props) {
   return (
-    <aside style={{ width: 220, padding: 16, borderRight: "1px solid #ddd" }}>
+    <aside style={{ width: 220, padding: 16, borderRight: "1px solid #708081ff" }}>
       <h3>Admin Panel</h3>
 
       {items.map((item) => (
