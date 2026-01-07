@@ -2,9 +2,12 @@ import { useMemo, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 import Dashboard from "./pages/Dashboard";
+import Users from "./pages/Users";
+
 
 export default function App() {
   const [page, setPage] = useState<string>("Dashboard");
+  if (page === "Users") return <Users />;
 
   const content = useMemo(() => {
     if (page === "Dashboard") return <Dashboard />;
