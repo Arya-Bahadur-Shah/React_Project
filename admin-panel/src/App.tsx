@@ -4,6 +4,10 @@ import Topbar from "./components/Topbar";
 
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
+import Products from "./pages/Products";
+import Settings from "./pages/Settings";
+
+
 
 export default function App() {
   const [page, setPage] = useState("Dashboard");
@@ -11,6 +15,8 @@ export default function App() {
   const content = useMemo(() => {
     if (page === "Dashboard") return <Dashboard />;
     if (page === "Users") return <Users />;
+    if (page === "Products") return <Products />;
+    if (page === "Settings") return <Settings />;
     return (
       <div style={{ padding: 18 }}>
         <p style={{ marginTop: 0 }}>
